@@ -1,0 +1,60 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  font-family: sans-serif;
+  background-color: white;
+}
+.popup{
+  position: fixed;
+  z-index: 1;
+}
+.content{
+  height: 30vw;
+  width: 60vw;
+  margin: 2vw 2vw;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(0);
+  background-color: white;
+  padding: 1vw 2vw;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 2;
+  
+}
+.close-button{
+  position: absolute;
+  right: 20px;
+  background-color: black;
+  height: 3vw;
+  width: 3vw;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.words{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content.active{
+  transition: all 200ms ease-in-out;
+  transform: translate(-50%, -50%) scale(1);
+}

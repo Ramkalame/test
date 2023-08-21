@@ -1,0 +1,61 @@
+/* Style for the tree */
+.tree {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style for each level */
+.tree ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.tree ul li {
+  text-align: center;
+  margin: 10px;
+  position: relative;
+}
+
+/* Style for member spans */
+.tree span {
+  display: inline-block;
+  border: 2px solid #3498db; /* Border color for spans */
+  padding: 10px 20px; /* Adjust padding as needed */
+  margin: 5px;
+  background-color: #fff; /* Background color for spans */
+  border-radius: 10px;
+  color: #333; /* Text color for spans */
+  position: relative; /* Add relative positioning for the connection lines */
+}
+
+/* Style for connecting lines */
+.tree ul li::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px); /* Adjust the line vertical position */
+  left: -30px; /* Extend the line to the left */
+  width: 30px; /* Increase line length */
+  height: 2px; /* Increase line thickness */
+  background-color: #3498db; /* Line color */
+  z-index: -1; /* Place lines behind the spans */
+}
+
+/* Style for vertical lines connecting nodes */
+.tree ul ul::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -20px; /* Adjust vertical line start position */
+  width: 2px; /* Increase line thickness */
+  height: 20px;
+  background-color: #3498db; /* Line color */
+}
+
+/* Style for the root node (Level 1) */
+.tree ul.level1 li::before {
+  left: 0;
+}
